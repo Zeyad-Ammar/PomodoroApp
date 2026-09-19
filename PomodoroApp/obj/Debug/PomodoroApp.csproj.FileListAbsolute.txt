@@ -1,0 +1,10 @@
+D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\PomodoroApp.exe.config
+D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\PomodoroApp.exe
+D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\PomodoroApp.pdb
+D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.csproj.AssemblyReference.cache
+D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.mainScreen.resources
+D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.Properties.Resources.resources
+D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.csproj.GenerateResource.cache
+D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.csproj.CoreCompileInputs.cache
+D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.exe
+D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.pdb

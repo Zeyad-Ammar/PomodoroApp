@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PomodoroApp
 {
-    public partial class Form1 : Form
+    public partial class mainScreen : Form
     {
-        public Form1()
+        public mainScreen()
         {
             InitializeComponent();
         }
