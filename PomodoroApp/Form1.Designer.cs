@@ -34,6 +34,10 @@
             this.lbTimer = new System.Windows.Forms.Label();
             this.btnStart = new System.Windows.Forms.Button();
             this.btnPause = new System.Windows.Forms.Button();
+            this.lbSessionsCounter = new System.Windows.Forms.Label();
+            this.MainMenu = new System.Windows.Forms.MenuStrip();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -74,20 +78,56 @@
             this.btnPause.UseVisualStyleBackColor = true;
             this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
             // 
+            // lbSessionsCounter
+            // 
+            this.lbSessionsCounter.AutoSize = true;
+            this.lbSessionsCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSessionsCounter.Location = new System.Drawing.Point(881, 80);
+            this.lbSessionsCounter.Name = "lbSessionsCounter";
+            this.lbSessionsCounter.Size = new System.Drawing.Size(212, 42);
+            this.lbSessionsCounter.TabIndex = 3;
+            this.lbSessionsCounter.Text = "0 Sessions";
+            // 
+            // MainMenu
+            // 
+            this.MainMenu.Dock = System.Windows.Forms.DockStyle.None;
+            this.MainMenu.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.settingsToolStripMenuItem});
+            this.MainMenu.Location = new System.Drawing.Point(9, 9);
+            this.MainMenu.Name = "MainMenu";
+            this.MainMenu.Size = new System.Drawing.Size(173, 45);
+            this.MainMenu.TabIndex = 5;
+            this.MainMenu.Text = "Menu";
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.Image = global::PomodoroApp.Properties.Resources.cogwheel;
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(163, 41);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
             // mainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.Controls.Add(this.MainMenu);
+            this.Controls.Add(this.lbSessionsCounter);
             this.Controls.Add(this.btnPause);
             this.Controls.Add(this.btnStart);
             this.Controls.Add(this.lbTimer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.MainMenu;
             this.Name = "mainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Main Screen";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.mainScreen_Load);
+            this.MainMenu.ResumeLayout(false);
+            this.MainMenu.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -99,6 +139,9 @@
         private System.Windows.Forms.Label lbTimer;
         private System.Windows.Forms.Button btnStart;
         private System.Windows.Forms.Button btnPause;
+        private System.Windows.Forms.Label lbSessionsCounter;
+        private System.Windows.Forms.MenuStrip MainMenu;
+        private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
     }
 }
 

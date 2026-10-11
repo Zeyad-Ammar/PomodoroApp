@@ -8,3 +8,4 @@ D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.csproj.GenerateResou
 D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.csproj.CoreCompileInputs.cache
 D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.exe
 D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.pdb
+D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.frmSettings.resources
