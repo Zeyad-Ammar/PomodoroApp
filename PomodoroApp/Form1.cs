@@ -27,6 +27,8 @@ namespace PomodoroApp
         private SoundPlayer focusSound;
         private SoundPlayer alarmSound;
 
+       
+
         public mainScreen()
         {
             InitializeComponent();
@@ -37,7 +39,9 @@ namespace PomodoroApp
             focusSound = new SoundPlayer(@"Sounds/rain.wav");
             alarmSound = new SoundPlayer(@"Sounds/alarm1.wav");
             btnPause.Enabled = false;
+            AppSettings.Load(ref _sessionLengthInMin,ref _breakLengthinMin);
 
+            
 
         }
 
@@ -110,6 +114,8 @@ namespace PomodoroApp
 
             this._breakLengthinMin = args.breakLength;
             this._sessionLengthInMin = args.sessionLength;
+
+            AppSettings.Save(this._sessionLengthInMin, this._breakLengthinMin);
 
         }
         private void timer1_Tick(object sender, EventArgs e)
