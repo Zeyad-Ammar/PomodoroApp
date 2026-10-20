@@ -60,6 +60,7 @@ namespace PomodoroApp
             if (_isFocusSession)
             {
                // focusSound.PlayLooping();
+
                 
             }
             
@@ -124,8 +125,9 @@ namespace PomodoroApp
             
 
 
-            TimeSpan ts = TimeSpan.FromSeconds(_timeInSec);
-            lbTimer.Text = ts.ToString(@"mm\:ss");
+            int passedMinutes=_timeInSec / 60;
+            int reminderSecondes = _timeInSec % 60;
+            lbTimer.Text = passedMinutes.ToString("00") + ":" + reminderSecondes.ToString("00"); ;
 
             int timeInMin = _timeInSec / 60;
 
