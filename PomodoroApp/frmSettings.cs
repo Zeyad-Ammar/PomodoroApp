@@ -13,15 +13,19 @@ namespace PomodoroApp
     public partial class frmSettings : Form
     {
 
-        private int sessionLength;
-        private int breakLength;
-        public frmSettings(int CurrentSessionLength,int CurrentBreakLength)
+        private int _sessionLength;
+        private int _breakLength;
+        private int _longBreakLength;
+        private int _numOfSessionsForLongBreak;
+        public frmSettings(int currentSessionLength,int currentBreakLength,int currentLongBreakLength,int currentNumOfSessionsForLongBreak)
         {
             InitializeComponent();
-            this.sessionLength = CurrentSessionLength;
-            this.breakLength = CurrentBreakLength;
-            nudSessionLength.Value = CurrentSessionLength;
-            nudBreakLength.Value = CurrentBreakLength;
+            this._sessionLength = currentSessionLength;
+            this._breakLength = currentBreakLength;
+            nudSessionLength.Value = currentSessionLength;
+            nudBreakLength.Value = currentBreakLength;
+            nudLongBreakLength.Value = currentLongBreakLength;
+            nudNumberOfSessionsForLongBreak.Value = currentNumOfSessionsForLongBreak;
         }
 
 
@@ -30,11 +34,17 @@ namespace PomodoroApp
             public int sessionLength { get; set; }
 
             public int breakLength { get; set; }
+
+            public int longBreakLength { get; set; }
+
+            public int numOfSessionsForLongBreak {  get; set; }
             
-           public settingsArg(int sessionLength, int breakLength)
+           public settingsArg(int sessionLength, int breakLength,int longBreakLength,int numOfSessionsForLongBreak)
             {
                 this.sessionLength = sessionLength;
                 this.breakLength = breakLength;
+                this.longBreakLength = longBreakLength;
+                this.numOfSessionsForLongBreak = numOfSessionsForLongBreak;
             }
 
            public settingsArg()
@@ -53,9 +63,9 @@ namespace PomodoroApp
             this.Close();
         }
 
-        private void submitChanges(int newSessionLength,int newBreakLength)
+        private void submitChanges(int newSessionLength,int newBreakLength,int newLongBreakLength,int newNumOfSessionsForLongBreak)
         {
-            settingsArg settingsArg = new settingsArg(newSessionLength,newBreakLength);
+            settingsArg settingsArg = new settingsArg(newSessionLength,newBreakLength,newLongBreakLength,newNumOfSessionsForLongBreak);
 
             onSettingsChanged?.Invoke(this, settingsArg);
 
@@ -63,10 +73,13 @@ namespace PomodoroApp
         private void btnOk_Click(object sender, EventArgs e)
         {
 
-            this.sessionLength=(int)nudSessionLength.Value;
-            this.breakLength=(int)nudBreakLength.Value; 
+            this._sessionLength=(int)nudSessionLength.Value;
+            this._breakLength=(int)nudBreakLength.Value;
+            this._longBreakLength = (int)nudLongBreakLength.Value;
+            this._numOfSessionsForLongBreak = (int)nudNumberOfSessionsForLongBreak.Value;
 
-            submitChanges(sessionLength, breakLength);
+
+            submitChanges(_sessionLength, _breakLength,_longBreakLength,_numOfSessionsForLongBreak);
           
 
             this.Close();

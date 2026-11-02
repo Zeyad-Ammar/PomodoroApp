@@ -22,6 +22,9 @@ namespace PomodoroApp
         private int _sessionLengthInMin = 50;
         private int _breakLengthinMin = 15;
 
+        private int _numOfSessionsForLongBreak = 4;
+        private int _longbreakLengthinMin = 60;
+
         private int _sessionsCounter = 0;
         private int _timeInSec = 0;
         private SoundPlayer focusSound;
@@ -39,7 +42,7 @@ namespace PomodoroApp
             focusSound = new SoundPlayer(@"Sounds/rain.wav");
             alarmSound = new SoundPlayer(@"Sounds/alarm1.wav");
             btnPause.Enabled = false;
-            AppSettings.Load(ref _sessionLengthInMin,ref _breakLengthinMin);
+            AppSettings.Load(ref _sessionLengthInMin,ref _breakLengthinMin,ref _longbreakLengthinMin,ref _numOfSessionsForLongBreak);
 
             
 
@@ -115,9 +118,16 @@ namespace PomodoroApp
 
             this._breakLengthinMin = args.breakLength;
             this._sessionLengthInMin = args.sessionLength;
+            this._longbreakLengthinMin = args.longBreakLength;
+            this._numOfSessionsForLongBreak = args.numOfSessionsForLongBreak;
 
-            AppSettings.Save(this._sessionLengthInMin, this._breakLengthinMin);
+            AppSettings.Save(this._sessionLengthInMin, this._breakLengthinMin,this._longbreakLengthinMin,this._numOfSessionsForLongBreak);
 
+        }
+
+        private bool IsLongBreak()
+        {
+            return _sessionsCounter!=0 && (_sessionsCounter % _numOfSessionsForLongBreak==0);
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -141,11 +151,17 @@ namespace PomodoroApp
 
 
             }
-            else if(!_isFocusSession&& timeInMin == _breakLengthinMin)
+            else if(!_isFocusSession)
             {
 
-               endBreak();
-
+                if (IsLongBreak() && timeInMin == _longbreakLengthinMin)
+                {
+                    endBreak();
+                }
+                else if(!IsLongBreak() && timeInMin == _breakLengthinMin)
+                {
+                    endBreak();
+                }
 
             }
 
@@ -169,7 +185,7 @@ namespace PomodoroApp
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSettings frmSettings = new frmSettings(this._sessionLengthInMin,this._breakLengthinMin);
+            frmSettings frmSettings = new frmSettings(this._sessionLengthInMin,this._breakLengthinMin,this._longbreakLengthinMin,this._numOfSessionsForLongBreak);
 
             frmSettings.onSettingsChanged += setNewSettings;
 

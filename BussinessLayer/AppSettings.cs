@@ -4,33 +4,39 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Microsoft.Win32;
-using System.Windows.Forms;
+using BussinessLayer;
 namespace PomodoroApp
 {
-    internal class AppSettings
+    public class AppSettings
     {
         
 
         static private string _keyPath = @"HKEY_CURRENT_USER\SOFTWARE\PomodoroApp";
         
 
-        public static void Load(ref int focusMinutes, ref int breakMinutes)
+        public static void Load(ref int focusMinutes, ref int breakMinutes,ref int longBreakMinutes,ref int numOfSessionsForLongBreak)
         {
             try
             {
                 string sessionLength = Registry.GetValue(_keyPath, "sessionLength", null) as string;
                 string breakLength = Registry.GetValue(_keyPath, "breakLength", null) as string;
+                string longBreakLength = Registry.GetValue(_keyPath, "longBreakLength", null) as string;
+                string sessionNumForLongBreak= Registry.GetValue(_keyPath, "sessionsNumForLongBreak", null) as string;
+
 
 
                 focusMinutes = int.Parse(sessionLength);
                 breakMinutes=int.Parse(breakLength);
+                longBreakMinutes=int.Parse(longBreakLength);
+                numOfSessionsForLongBreak = int.Parse(sessionNumForLongBreak);
             }
             catch (Exception ex)
             {
                 focusMinutes = 50;
                 breakMinutes = 15;
+                longBreakMinutes = 60;
+                numOfSessionsForLongBreak = 4;
             } 
 
             
@@ -38,16 +44,21 @@ namespace PomodoroApp
             
         }
 
-        public static void Save(int sessionLength,int breakLength)
+        public static void Save(int sessionLength,int breakLength,int longBreakLength,int numOfSessionsForLongBreak)
         {
+           
             try
             {
                 Registry.SetValue(_keyPath, "sessionLength", sessionLength.ToString(), RegistryValueKind.String);
                 Registry.SetValue(_keyPath, "breakLength", breakLength.ToString(), RegistryValueKind.String);
+                Registry.SetValue(_keyPath, "longBreakLength", longBreakLength.ToString(), RegistryValueKind.String);
+                Registry.SetValue(_keyPath, "sessionsNumForLongBreak", numOfSessionsForLongBreak.ToString(), RegistryValueKind.String);
+
+
             }
             catch (Exception ex) {
 
-                MessageBox.Show("an error happened, try again");
+                throw new AccessViolationException("Can't save the settings");
             
             }
 

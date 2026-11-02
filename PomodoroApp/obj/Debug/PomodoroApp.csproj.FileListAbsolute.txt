@@ -9,3 +9,6 @@ D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.csproj.CoreCompileIn
 D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.exe
 D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.pdb
 D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.frmSettings.resources
+D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\BussinessLayer.dll
+D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\BussinessLayer.pdb
+D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\Pomodoro.41812E7B.Up2Date
