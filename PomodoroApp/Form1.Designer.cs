@@ -81,12 +81,12 @@
             // lbSessionsCounter
             // 
             this.lbSessionsCounter.AutoSize = true;
-            this.lbSessionsCounter.Font = new System.Drawing.Font("Microsoft Sans Serif", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSessionsCounter.Location = new System.Drawing.Point(881, 80);
+            this.lbSessionsCounter.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSessionsCounter.Location = new System.Drawing.Point(896, 112);
             this.lbSessionsCounter.Name = "lbSessionsCounter";
-            this.lbSessionsCounter.Size = new System.Drawing.Size(212, 42);
+            this.lbSessionsCounter.Size = new System.Drawing.Size(259, 68);
             this.lbSessionsCounter.TabIndex = 3;
-            this.lbSessionsCounter.Text = "0 Sessions";
+            this.lbSessionsCounter.Text = "Session 1";
             // 
             // MainMenu
             // 
@@ -97,7 +97,7 @@
             this.settingsToolStripMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(9, 9);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(173, 45);
+            this.MainMenu.Size = new System.Drawing.Size(171, 45);
             this.MainMenu.TabIndex = 5;
             this.MainMenu.Text = "Menu";
             // 

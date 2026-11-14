@@ -1,10 +1,12 @@
-﻿using System;
+﻿using NAudio.CoreAudioApi;
+using NAudio.Wave;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
-using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Media;
 using System.Text;
@@ -21,17 +23,20 @@ namespace PomodoroApp
         private bool _isFocusSession = true;
         private int _sessionLengthInMin = 50;
         private int _breakLengthinMin = 15;
+        private string _soundsPath = "D:\\VSProjects\\PomodoroApp\\PomodoroApp\\Sounds";
 
         private int _numOfSessionsForLongBreak = 4;
         private int _longbreakLengthinMin = 60;
 
-        private int _sessionsCounter = 0;
+        private int _sessionsCounter = 1;
         private int _timeInSec = 0;
         private SoundPlayer focusSound;
-        private SoundPlayer alarmSound;
+        //private SoundPlayer alarmSound;
 
-       
+        private AudioFileReader alarmSound;
+        private WasapiOut outputDevice;
 
+        private MMDevice speakerDevice;
         public mainScreen()
         {
             InitializeComponent();
@@ -39,34 +44,30 @@ namespace PomodoroApp
 
         private void mainScreen_Load(object sender, EventArgs e)
         {
-            focusSound = new SoundPlayer(@"Sounds/rain.wav");
-            alarmSound = new SoundPlayer(@"Sounds/alarm1.wav");
-            btnPause.Enabled = false;
-            AppSettings.Load(ref _sessionLengthInMin,ref _breakLengthinMin,ref _longbreakLengthinMin,ref _numOfSessionsForLongBreak);
-
             
 
+            btnPause.Enabled = false;
+
+            AppSettings.Load(
+                ref _sessionLengthInMin,
+                ref _breakLengthinMin,
+                ref _longbreakLengthinMin,
+                ref _numOfSessionsForLongBreak
+            );
+
+
+            
         }
 
 
 
-       
+
         private void btnStart_Click(object sender, EventArgs e)
         {
 
-            alarmSound.Stop();
+            
 
             timer1.Start();
-
-            
-
-            if (_isFocusSession)
-            {
-               // focusSound.PlayLooping();
-
-                
-            }
-            
             btnStart.Enabled = false;
             settingsToolStripMenuItem.Enabled = false;
             btnPause.Enabled = true;
@@ -74,24 +75,32 @@ namespace PomodoroApp
 
         }
 
+        private void PlayAlarm()
+        {
+            speakerDevice = Speakers.GetIntegratedAudioDevice();
+            alarmSound = new AudioFileReader(Path.Combine(_soundsPath, "alarm1.wav"));
+            outputDevice = new WasapiOut(speakerDevice, AudioClientShareMode.Shared, true, 100);
+
+            outputDevice.Init(alarmSound);
+            outputDevice.Play();
+        }
 
         private void endFocusSession()
         {
 
             _timeInSec = 0;
             _isFocusSession = false;
-            focusSound.Stop();
-            alarmSound.Play();
-
+            PlayAlarm();
 
             timer1.Stop();
             btnPause.Enabled = false;
             btnStart.Enabled = true;
+            _sessionsCounter++;
+
+            lbSessionsCounter.Text = (IsLongBreak()? "Long":"Short") +" Break";
 
             btnStart.Text = "Start Break";
 
-            _sessionsCounter++;
-            lbSessionsCounter.Text = _sessionsCounter.ToString() + " Sessions";
             settingsToolStripMenuItem.Enabled = true;
 
         }
@@ -101,11 +110,12 @@ namespace PomodoroApp
         {
             _timeInSec = 0;
             _isFocusSession = true;
-            alarmSound.Play();
+            PlayAlarm();
             timer1.Stop();
 
             btnPause.Enabled = false;
             btnStart.Enabled = true;
+            lbSessionsCounter.Text = " Session " + _sessionsCounter.ToString();
 
             btnStart.Text = "Start Focus";
             settingsToolStripMenuItem.Enabled = true;
@@ -125,10 +135,16 @@ namespace PomodoroApp
 
         }
 
+        
+
+    
+
         private bool IsLongBreak()
         {
-            return _sessionsCounter!=0 && (_sessionsCounter % _numOfSessionsForLongBreak==0);
+            int endedSessions = (_sessionsCounter - 1);
+            return  (endedSessions != 0) && (endedSessions % _numOfSessionsForLongBreak == 0);
         }
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             _timeInSec++;
@@ -144,11 +160,7 @@ namespace PomodoroApp
             if (_isFocusSession && timeInMin == _sessionLengthInMin)
             {
 
-                //end focus session
-
                 endFocusSession();
-
-
 
             }
             else if(!_isFocusSession)
