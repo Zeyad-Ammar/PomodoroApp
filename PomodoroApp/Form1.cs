@@ -190,7 +190,6 @@ namespace PomodoroApp
         private void btnPause_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-            focusSound.Stop();
             btnPause.Enabled = false;
             btnStart.Enabled = true;
         }
