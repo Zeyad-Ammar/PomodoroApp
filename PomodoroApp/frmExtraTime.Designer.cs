@@ -52,7 +52,7 @@
             // txtExtraFocusTime
             // 
             this.txtExtraFocusTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtExtraFocusTime.Location = new System.Drawing.Point(417, 82);
+            this.txtExtraFocusTime.Location = new System.Drawing.Point(419, 82);
             this.txtExtraFocusTime.Name = "txtExtraFocusTime";
             this.txtExtraFocusTime.Size = new System.Drawing.Size(105, 56);
             this.txtExtraFocusTime.TabIndex = 1;
@@ -63,7 +63,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 16);
+            this.label1.Location = new System.Drawing.Point(9, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(461, 45);
             this.label1.TabIndex = 2;
@@ -73,7 +73,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 85);
+            this.label2.Location = new System.Drawing.Point(9, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(357, 50);
             this.label2.TabIndex = 3;
@@ -96,7 +96,7 @@
             this.lbAddSimbol.AutoSize = true;
             this.lbAddSimbol.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbAddSimbol.ForeColor = System.Drawing.Color.LimeGreen;
-            this.lbAddSimbol.Location = new System.Drawing.Point(363, 83);
+            this.lbAddSimbol.Location = new System.Drawing.Point(365, 83);
             this.lbAddSimbol.Name = "lbAddSimbol";
             this.lbAddSimbol.Size = new System.Drawing.Size(50, 53);
             this.lbAddSimbol.TabIndex = 5;

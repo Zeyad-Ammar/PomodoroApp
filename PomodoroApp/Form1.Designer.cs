@@ -129,7 +129,7 @@
             this.MainMenuStrip = this.MainMenu;
             this.Name = "mainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Main Screen";
+            this.Text = "Pomodoro";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.mainScreen_Load);
             this.MainMenu.ResumeLayout(false);

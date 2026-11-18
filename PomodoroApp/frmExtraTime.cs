@@ -26,7 +26,7 @@ namespace PomodoroApp
         private void SetAutoCloserTimer()
         {
             autoCloserTimer = new Timer();
-            autoCloserTimer.Interval = 10 * 1000;
+            autoCloserTimer.Interval = 15 * 1000;
             
             autoCloserTimer.Tick += (s, e) => {
                 autoCloserTimer.Stop();
