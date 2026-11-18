@@ -30,12 +30,12 @@ namespace PomodoroApp
 
         private int _sessionsCounter = 1;
         private int _timeInSec = 0;
-        private SoundPlayer focusSound;
-        //private SoundPlayer alarmSound;
-
+        private int _AddedTimeInMins = 0;
+        private int _Reward1MinBreakForEach = 3;
         private AudioFileReader alarmSound;
         private WasapiOut outputDevice;
 
+        private frmExtraTime frmExtraTime;
         private MMDevice speakerDevice;
         public mainScreen()
         {
@@ -44,7 +44,6 @@ namespace PomodoroApp
 
         private void mainScreen_Load(object sender, EventArgs e)
         {
-            
 
             btnPause.Enabled = false;
 
@@ -65,8 +64,10 @@ namespace PomodoroApp
         private void btnStart_Click(object sender, EventArgs e)
         {
 
-            
-
+            StopAlarm();
+            if(frmExtraTime != null)
+                frmExtraTime.Close();
+            _timeInSec = 0;
             timer1.Start();
             btnStart.Enabled = false;
             settingsToolStripMenuItem.Enabled = false;
@@ -75,6 +76,11 @@ namespace PomodoroApp
 
         }
 
+        private void StopAlarm()
+        {
+            if(outputDevice!= null)
+                outputDevice.Stop();
+        }
         private void PlayAlarm()
         {
             speakerDevice = Speakers.GetIntegratedAudioDevice();
@@ -85,14 +91,58 @@ namespace PomodoroApp
             outputDevice.Play();
         }
 
-        private void endFocusSession()
+        private void AddExtraTime(object sender,frmExtraTime.ExtraTimeArgs e)
+        {
+            if (e.AddExtraTime)
+            {
+                _AddedTimeInMins += e.ExtraTime;
+                ContinueFocusSession();
+            }
+            else
+            {
+                btnStart.PerformClick();
+            }
+           
+        }
+
+        private void ShowExtraTimeForm()
+        {
+            frmExtraTime = new frmExtraTime();
+            frmExtraTime.onExtraTimeChanged += AddExtraTime;
+            Rectangle workingArea = Screen.FromControl(this).WorkingArea;
+
+            frmExtraTime.StartPosition = FormStartPosition.Manual;
+
+            frmExtraTime.Location = new Point(
+                workingArea.Right - frmExtraTime.Width - 15,
+                workingArea.Bottom - frmExtraTime.Height - 15
+            );
+
+            frmExtraTime.Show();
+        }
+
+        private void ContinueFocusSession()
+        {
+            _isFocusSession = true;
+            StopAlarm();
+            timer1.Start();
+            _sessionsCounter--;
+            btnPause.Enabled = true;
+            btnStart.Enabled = false;
+            lbSessionsCounter.Text = " Session " + _sessionsCounter.ToString();
+            btnStart.Text = "Start Focus";
+            settingsToolStripMenuItem.Enabled = false;
+
+        }
+        private void EndFocusSession()
         {
 
-            _timeInSec = 0;
+            
             _isFocusSession = false;
             PlayAlarm();
-
             timer1.Stop();
+            ShowExtraTimeForm();
+          
             btnPause.Enabled = false;
             btnStart.Enabled = true;
             _sessionsCounter++;
@@ -108,7 +158,8 @@ namespace PomodoroApp
 
         private void endBreak()
         {
-            _timeInSec = 0;
+
+            _AddedTimeInMins = 0;
             _isFocusSession = true;
             PlayAlarm();
             timer1.Stop();
@@ -157,20 +208,22 @@ namespace PomodoroApp
 
             int timeInMin = _timeInSec / 60;
 
-            if (_isFocusSession && timeInMin == _sessionLengthInMin)
+            if (_isFocusSession && timeInMin == (_sessionLengthInMin + _AddedTimeInMins))
             {
 
-                endFocusSession();
+                EndFocusSession();
 
             }
             else if(!_isFocusSession)
             {
 
-                if (IsLongBreak() && timeInMin == _longbreakLengthinMin)
+                int rewardBreakTime = _AddedTimeInMins / _Reward1MinBreakForEach + (_AddedTimeInMins % _Reward1MinBreakForEach!=0? 1:0);
+
+                if (IsLongBreak() && timeInMin == (_longbreakLengthinMin + rewardBreakTime))
                 {
                     endBreak();
                 }
-                else if(!IsLongBreak() && timeInMin == _breakLengthinMin)
+                else if(!IsLongBreak() && timeInMin == (_breakLengthinMin +rewardBreakTime))
                 {
                     endBreak();
                 }
@@ -189,9 +242,17 @@ namespace PomodoroApp
 
         private void btnPause_Click(object sender, EventArgs e)
         {
-            timer1.Stop();
-            btnPause.Enabled = false;
-            btnStart.Enabled = true;
+            if (timer1.Enabled)
+            {
+                timer1.Stop();
+                btnPause.Text = "Resume";
+            }
+            else
+            {
+                btnPause.Text = "Pause";
+                timer1.Start();
+            }
+           
         }
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)

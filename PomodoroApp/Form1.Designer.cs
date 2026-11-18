@@ -37,6 +37,7 @@
             this.lbSessionsCounter = new System.Windows.Forms.Label();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.niAddTime = new System.Windows.Forms.NotifyIcon(this.components);
             this.MainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -109,6 +110,11 @@
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
+            // niAddTime
+            // 
+            this.niAddTime.Text = "Are U want To add time";
+            this.niAddTime.Visible = true;
+            // 
             // mainScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -142,6 +148,7 @@
         private System.Windows.Forms.Label lbSessionsCounter;
         private System.Windows.Forms.MenuStrip MainMenu;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
+        private System.Windows.Forms.NotifyIcon niAddTime;
     }
 }
 
