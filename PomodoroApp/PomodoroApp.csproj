@@ -194,6 +194,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Gemini_Generated_Image_fhiritfhiritfhir.ico" />
+    <None Include="Resources\add-button.png" />
+    <None Include="Resources\sign.png" />
     <Content Include="Sounds\alarm1.wav" />
     <Content Include="Sounds\alarm2.wav" />
     <Content Include="Sounds\rain.wav" />

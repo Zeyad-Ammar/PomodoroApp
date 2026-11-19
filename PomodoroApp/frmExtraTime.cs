@@ -13,11 +13,12 @@ namespace PomodoroApp
     public partial class frmExtraTime : Form
     {
         private Timer autoCloserTimer;
-        public frmExtraTime()
+        public frmExtraTime(int defaultExtraAdd)
         {
             
 
             InitializeComponent();
+            nudExtraAddTime.Value=defaultExtraAdd;
             SetAutoCloserTimer();
             autoCloserTimer.Start();
 
@@ -54,13 +55,7 @@ namespace PomodoroApp
 
 
 
-        private void txtExtraFocusTime_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (!char.IsDigit(e.KeyChar)&&!char.IsControl(e.KeyChar))
-            {
-                e.Handled = true;
-            }
-        }
+       
 
         private void btnTakeBrake_Click(object sender, EventArgs e)
         {
@@ -70,15 +65,22 @@ namespace PomodoroApp
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            int extraTime = 0;
-            int.TryParse(txtExtraFocusTime.Text.ToString(),out extraTime);
+            int extraTime = (int)nudExtraAddTime.Value;
             onExtraTimeChanged?.Invoke(this, new ExtraTimeArgs(extraTime));
             this.Close();
         }
 
         private void frmExtraTime_Load(object sender, EventArgs e)
         {
-            txtExtraFocusTime.Focus();
+            nudExtraAddTime.Focus();
+        }
+
+        private void nudExtraAddTime_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

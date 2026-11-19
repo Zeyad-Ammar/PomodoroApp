@@ -38,6 +38,7 @@
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.niAddTime = new System.Windows.Forms.NotifyIcon(this.components);
+            this.lbTargetTime = new System.Windows.Forms.Label();
             this.MainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,19 +51,23 @@
             // 
             this.lbTimer.AutoSize = true;
             this.lbTimer.Font = new System.Drawing.Font("MV Boli", 120F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTimer.Location = new System.Drawing.Point(629, 250);
+            this.lbTimer.ForeColor = System.Drawing.Color.Black;
+            this.lbTimer.Location = new System.Drawing.Point(472, 139);
+            this.lbTimer.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbTimer.Name = "lbTimer";
-            this.lbTimer.Size = new System.Drawing.Size(739, 263);
+            this.lbTimer.Size = new System.Drawing.Size(590, 210);
             this.lbTimer.TabIndex = 0;
             this.lbTimer.Text = "00:00";
+            this.lbTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.lbTimer.Click += new System.EventHandler(this.lbTimer_Click);
             // 
             // btnStart
             // 
             this.btnStart.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.Location = new System.Drawing.Point(693, 526);
+            this.btnStart.Location = new System.Drawing.Point(520, 427);
+            this.btnStart.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(273, 68);
+            this.btnStart.Size = new System.Drawing.Size(205, 55);
             this.btnStart.TabIndex = 1;
             this.btnStart.Text = "Start Focus";
             this.btnStart.UseVisualStyleBackColor = true;
@@ -71,9 +76,10 @@
             // btnPause
             // 
             this.btnPause.Font = new System.Drawing.Font("Times New Roman", 25.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPause.Location = new System.Drawing.Point(1006, 526);
+            this.btnPause.Location = new System.Drawing.Point(754, 427);
+            this.btnPause.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPause.Name = "btnPause";
-            this.btnPause.Size = new System.Drawing.Size(273, 68);
+            this.btnPause.Size = new System.Drawing.Size(205, 55);
             this.btnPause.TabIndex = 2;
             this.btnPause.Text = "Pause";
             this.btnPause.UseVisualStyleBackColor = true;
@@ -83,30 +89,36 @@
             // 
             this.lbSessionsCounter.AutoSize = true;
             this.lbSessionsCounter.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSessionsCounter.Location = new System.Drawing.Point(896, 112);
+            this.lbSessionsCounter.ForeColor = System.Drawing.Color.Black;
+            this.lbSessionsCounter.Location = new System.Drawing.Point(663, 72);
+            this.lbSessionsCounter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbSessionsCounter.Name = "lbSessionsCounter";
-            this.lbSessionsCounter.Size = new System.Drawing.Size(259, 68);
+            this.lbSessionsCounter.Size = new System.Drawing.Size(209, 55);
             this.lbSessionsCounter.TabIndex = 3;
             this.lbSessionsCounter.Text = "Session 1";
+            this.lbSessionsCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // MainMenu
             // 
+            this.MainMenu.BackColor = System.Drawing.Color.Transparent;
             this.MainMenu.Dock = System.Windows.Forms.DockStyle.None;
             this.MainMenu.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem});
-            this.MainMenu.Location = new System.Drawing.Point(9, 9);
+            this.MainMenu.Location = new System.Drawing.Point(7, 7);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Size = new System.Drawing.Size(171, 45);
+            this.MainMenu.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.MainMenu.Size = new System.Drawing.Size(144, 39);
             this.MainMenu.TabIndex = 5;
             this.MainMenu.Text = "Menu";
             // 
             // settingsToolStripMenuItem
             // 
+            this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.settingsToolStripMenuItem.Image = global::PomodoroApp.Properties.Resources.cogwheel;
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(163, 41);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(138, 35);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
@@ -115,11 +127,26 @@
             this.niAddTime.Text = "Are U want To add time";
             this.niAddTime.Visible = true;
             // 
+            // lbTargetTime
+            // 
+            this.lbTargetTime.AutoSize = true;
+            this.lbTargetTime.BackColor = System.Drawing.Color.Transparent;
+            this.lbTargetTime.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
+            this.lbTargetTime.ForeColor = System.Drawing.Color.Green;
+            this.lbTargetTime.Location = new System.Drawing.Point(646, 362);
+            this.lbTargetTime.Name = "lbTargetTime";
+            this.lbTargetTime.Size = new System.Drawing.Size(243, 36);
+            this.lbTargetTime.TabIndex = 6;
+            this.lbTargetTime.Text = "Target Time (60)";
+            this.lbTargetTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // mainScreen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1902, 1033);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1470, 687);
+            this.Controls.Add(this.lbTargetTime);
             this.Controls.Add(this.MainMenu);
             this.Controls.Add(this.lbSessionsCounter);
             this.Controls.Add(this.btnPause);
@@ -127,6 +154,7 @@
             this.Controls.Add(this.lbTimer);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MainMenu;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "mainScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Pomodoro";
@@ -149,6 +177,7 @@
         private System.Windows.Forms.MenuStrip MainMenu;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
         private System.Windows.Forms.NotifyIcon niAddTime;
+        private System.Windows.Forms.Label lbTargetTime;
     }
 }
 

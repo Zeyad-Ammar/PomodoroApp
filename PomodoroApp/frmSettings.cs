@@ -13,19 +13,16 @@ namespace PomodoroApp
     public partial class frmSettings : Form
     {
 
-        private int _sessionLength;
-        private int _breakLength;
-        private int _longBreakLength;
-        private int _numOfSessionsForLongBreak;
-        public frmSettings(int currentSessionLength,int currentBreakLength,int currentLongBreakLength,int currentNumOfSessionsForLongBreak)
+       
+        public frmSettings(int currentSessionLength,int currentBreakLength,int currentLongBreakLength,int currentNumOfSessionsForLongBreak,int defaultExtraAdd,int rewardMinEach)
         {
             InitializeComponent();
-            this._sessionLength = currentSessionLength;
-            this._breakLength = currentBreakLength;
             nudSessionLength.Value = currentSessionLength;
             nudBreakLength.Value = currentBreakLength;
             nudLongBreakLength.Value = currentLongBreakLength;
             nudNumberOfSessionsForLongBreak.Value = currentNumOfSessionsForLongBreak;
+            nudDefaultExtraTime.Value = defaultExtraAdd;
+            nudRewardMinuteEach.Value = rewardMinEach;
         }
 
 
@@ -38,13 +35,20 @@ namespace PomodoroApp
             public int longBreakLength { get; set; }
 
             public int numOfSessionsForLongBreak {  get; set; }
-            
-           public settingsArg(int sessionLength, int breakLength,int longBreakLength,int numOfSessionsForLongBreak)
+
+            public int defaultExtraAdd { get; set; }
+            public int rewardMinEach { get; set; }
+
+
+
+            public settingsArg(int sessionLength, int breakLength,int longBreakLength,int numOfSessionsForLongBreak,int defaultExtraAdd,int rewardMinEach)
             {
                 this.sessionLength = sessionLength;
                 this.breakLength = breakLength;
                 this.longBreakLength = longBreakLength;
                 this.numOfSessionsForLongBreak = numOfSessionsForLongBreak;
+                this.defaultExtraAdd = defaultExtraAdd;
+                this.rewardMinEach = rewardMinEach;
             }
 
            public settingsArg()
@@ -63,9 +67,9 @@ namespace PomodoroApp
             this.Close();
         }
 
-        private void submitChanges(int newSessionLength,int newBreakLength,int newLongBreakLength,int newNumOfSessionsForLongBreak)
+        private void submitChanges(int newSessionLength,int newBreakLength,int newLongBreakLength,int newNumOfSessionsForLongBreak,int defaultExtraAdd,int rewardMinEach)
         {
-            settingsArg settingsArg = new settingsArg(newSessionLength,newBreakLength,newLongBreakLength,newNumOfSessionsForLongBreak);
+            settingsArg settingsArg = new settingsArg(newSessionLength,newBreakLength,newLongBreakLength,newNumOfSessionsForLongBreak,defaultExtraAdd,rewardMinEach);
 
             onSettingsChanged?.Invoke(this, settingsArg);
 
@@ -73,16 +77,25 @@ namespace PomodoroApp
         private void btnOk_Click(object sender, EventArgs e)
         {
 
-            this._sessionLength=(int)nudSessionLength.Value;
-            this._breakLength=(int)nudBreakLength.Value;
-            this._longBreakLength = (int)nudLongBreakLength.Value;
-            this._numOfSessionsForLongBreak = (int)nudNumberOfSessionsForLongBreak.Value;
+            int sessionLength=(int)nudSessionLength.Value;
+            int breakLength=(int)nudBreakLength.Value;
+            int longBreakLength = (int)nudLongBreakLength.Value;
+            int numOfSessionsForLongBreak = (int)nudNumberOfSessionsForLongBreak.Value;
+            int defaultExtraAddTime=(int)nudDefaultExtraTime.Value;
+            int rewardMinEach=(int)nudRewardMinuteEach.Value;
 
-
-            submitChanges(_sessionLength, _breakLength,_longBreakLength,_numOfSessionsForLongBreak);
+            submitChanges(sessionLength, breakLength,longBreakLength,numOfSessionsForLongBreak,defaultExtraAddTime,rewardMinEach);
           
 
             this.Close();
+        }
+
+        private void nudValidate_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
     }
 }

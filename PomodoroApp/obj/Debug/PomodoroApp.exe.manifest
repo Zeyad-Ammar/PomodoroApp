@@ -43,14 +43,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BussinessLayer.dll" size="5120">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BussinessLayer.dll" size="5632">
       <assemblyIdentity name="BussinessLayer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>1K7NaRWYdkWhOIDmN86PU/+EXAH9qtoJYPaBLfYSYHI=</dsig:DigestValue>
+        <dsig:DigestValue>DJ8LygxSAb3suMSI16RPyjJzn8aSmln/EkpPmEOkZEs=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -151,14 +151,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PomodoroApp.exe" size="1130408">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PomodoroApp.exe" size="1150888">
       <assemblyIdentity name="PomodoroApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>ivziLd7g6+W6L0UZXwG25pBD4CXkCwqDLquTFfpRJOM=</dsig:DigestValue>
+        <dsig:DigestValue>m4L1VGubO7yQb+kQmD/iP+5ZI/0QwiMIYujPg7CoYZA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
