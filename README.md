@@ -99,7 +99,7 @@ Extract the application files and run the executable.
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Zeyad-Ammar/PomodoroApp/
+   git clone https://github.com/Zeyad-Ammar/PomodoroApp
    ```
 
 2. Open the solution file (`.sln`) using Visual Studio.
