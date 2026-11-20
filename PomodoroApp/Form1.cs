@@ -21,16 +21,10 @@ namespace PomodoroApp
     {
 
         private bool _isFocusSession = true;
-        private int _sessionLengthInMin = 50;
-        private int _breakLengthinMin = 15;
-        private string _soundsPath = "D:\\VSProjects\\PomodoroApp\\PomodoroApp\\Sounds";
-        private int _numOfSessionsForLongBreak = 4;
-        private int _longbreakLengthinMin = 60;
-        private int _sessionsCounter = 1;
+        private string _soundsPath ;
+        private int _sessionNumber = 1;
         private int _timeInSec = 0;
         private int _addedTimeInMins = 0;
-        private int _reward1MinBreakForEach = 3;
-        private int _defaultExtraAddTime = 5;
         private AudioFileReader alarmSound;
         private WasapiOut outputDevice;
         private frmExtraTime frmExtraTime;
@@ -38,6 +32,7 @@ namespace PomodoroApp
         public mainScreen()
         {
             InitializeComponent();
+             _soundsPath = Path.Combine( AppDomain.CurrentDomain.BaseDirectory,"Sounds");
         }
 
         private void mainScreen_Load(object sender, EventArgs e)
@@ -45,16 +40,9 @@ namespace PomodoroApp
 
             btnPause.Enabled = false;
 
-            AppSettings.Load(
-                ref _sessionLengthInMin,
-                ref _breakLengthinMin,
-                ref _longbreakLengthinMin,
-                ref _numOfSessionsForLongBreak,
-                ref _defaultExtraAddTime,
-                ref _reward1MinBreakForEach
-            );
+            AppSettings.Load();
 
-           UpdateTargetTime();
+            UpdateTargetTimeLabel();
             
         }
         private void btnStart_Click(object sender, EventArgs e)
@@ -103,7 +91,7 @@ namespace PomodoroApp
 
         private void ShowExtraTimeForm()
         {
-            frmExtraTime = new frmExtraTime(_defaultExtraAddTime);
+            frmExtraTime = new frmExtraTime(AppSettings._defaultAddingTime);
             frmExtraTime.onExtraTimeChanged += AddExtraTime;
             Rectangle workingArea = Screen.FromControl(this).WorkingArea;
 
@@ -117,46 +105,33 @@ namespace PomodoroApp
             frmExtraTime.Show();
         }
 
-        private int TargetFocusTime()
-        {
-           return  _sessionLengthInMin + _addedTimeInMins;
-        }
+        
         private void ContinueFocusSession()
         {
             _isFocusSession = true;
             StopAlarm();
             timer1.Start();
-            _sessionsCounter--;
+            _sessionNumber--;
             btnPause.Enabled = true;
             btnStart.Enabled = false;
-            UpdateTargetTime();
-            lbSessionsCounter.Text = " Session " + _sessionsCounter.ToString();
+            UpdateTargetTimeLabel();
+            lbSessionsCounter.Text = " Session " + _sessionNumber.ToString();
             btnStart.Text = "Start Focus";
             settingsToolStripMenuItem.Enabled = false;
 
         }
-
-        private void UpdateTargetTime()
+        private void UpdateTargetTimeLabel()
         {
             if (_isFocusSession)
             {
-                lbTargetTime.Text = $"Target Time ({TargetFocusTime()})";
+                lbTargetTime.Text = $"Session Time ({AppSettings.TargetFocusTime(_addedTimeInMins)})";
 
             }
             else
             {
-                lbTargetTime.Text = $"Target Time ({TargetBreakTime()})";
+                lbTargetTime.Text = $"Break Time ({AppSettings.TargetBreakTime(_sessionNumber-1,_addedTimeInMins)})";
 
             }
-        }
-        private int RewardBreakMinutes()
-        {
-            return _addedTimeInMins / _reward1MinBreakForEach 
-                + (_addedTimeInMins % _reward1MinBreakForEach) != 0 ? 1 : 0;
-        }
-        private int TargetBreakTime()
-        {
-            return (IsLongBreak() ? _longbreakLengthinMin : _breakLengthinMin) + RewardBreakMinutes() ;
         }
         private void EndFocusSession()
         {
@@ -166,19 +141,18 @@ namespace PomodoroApp
             PlayAlarm();
             timer1.Stop();
             ShowExtraTimeForm();
-            UpdateTargetTime();
             btnPause.Enabled = false;
             btnStart.Enabled = true;
-            _sessionsCounter++;
-
-            lbSessionsCounter.Text = (IsLongBreak()? "Long":"Short") +" Break";
-
-            btnStart.Text = "Start Break";
-
+            _sessionNumber++;
             settingsToolStripMenuItem.Enabled = true;
 
-        }
+            lbSessionsCounter.Text = (AppSettings.IsLongBreak(_sessionNumber-1)? "Long":"Short") +" Break";
+            UpdateTargetTimeLabel();
+            
+            btnStart.Text = "Start Break";
 
+
+        }
         private void EndBreak()
         {
 
@@ -189,8 +163,8 @@ namespace PomodoroApp
 
             btnPause.Enabled = false;
             btnStart.Enabled = true;
-            lbSessionsCounter.Text = " Session " + _sessionsCounter.ToString();
-            UpdateTargetTime();
+            lbSessionsCounter.Text = " Session " + _sessionNumber.ToString();
+            UpdateTargetTimeLabel();
             btnStart.Text = "Start Focus";
             settingsToolStripMenuItem.Enabled = true;
 
@@ -199,31 +173,22 @@ namespace PomodoroApp
         private void SetNewSettings(object obj,frmSettings.settingsArg args)
         {
 
-            _breakLengthinMin = args.breakLength;
-            _sessionLengthInMin = args.sessionLength;
-            _longbreakLengthinMin = args.longBreakLength;
-            _numOfSessionsForLongBreak = args.numOfSessionsForLongBreak;
-            _defaultExtraAddTime = args.defaultExtraAdd;
-            _reward1MinBreakForEach = args.rewardMinEach;
+
             AppSettings.Save(
-                _sessionLengthInMin,
-                _breakLengthinMin,
-                _longbreakLengthinMin,
-                _numOfSessionsForLongBreak,
-                _defaultExtraAddTime,
-                _reward1MinBreakForEach
+                args.sessionLength,
+                args.breakLength,
+                args.longBreakLength,
+                args.numOfSessionsForLongBreak,
+                args.defaultExtraAdd,
+                args.rewardMinEach
                 );
 
-            UpdateTargetTime();
+            UpdateTargetTimeLabel();
 
 
         }
 
-        private bool IsLongBreak()
-        {
-            int endedSessions = (_sessionsCounter - 1);
-            return  (endedSessions != 0) && (endedSessions % _numOfSessionsForLongBreak == 0);
-        }
+       
 
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -237,7 +202,7 @@ namespace PomodoroApp
 
             int timeInMin = _timeInSec / 60;
 
-            if (_isFocusSession && timeInMin == (_sessionLengthInMin + _addedTimeInMins))
+            if (_isFocusSession && timeInMin == (AppSettings._sessionLength + _addedTimeInMins))
             {
 
                 EndFocusSession();
@@ -246,13 +211,13 @@ namespace PomodoroApp
             else if(!_isFocusSession)
             {
 
-                int rewardBreakTime = _addedTimeInMins / _reward1MinBreakForEach + (_addedTimeInMins % _reward1MinBreakForEach!=0? 1:0);
+                int rewardBreakTime = _addedTimeInMins / AppSettings._rewardMinEach + (_addedTimeInMins % AppSettings._rewardMinEach !=0? 1:0);
 
-                if (IsLongBreak() && timeInMin == (_longbreakLengthinMin + rewardBreakTime))
+                if (AppSettings.IsLongBreak(_sessionNumber-1) && timeInMin == (AppSettings._longBreakLength + rewardBreakTime))
                 {
                     EndBreak();
                 }
-                else if(!IsLongBreak() && timeInMin == (_breakLengthinMin +rewardBreakTime))
+                else if(!AppSettings.IsLongBreak(_sessionNumber-1) && timeInMin == (AppSettings._breakLength +rewardBreakTime))
                 {
                     EndBreak();
                 }
@@ -286,7 +251,7 @@ namespace PomodoroApp
 
         private void settingsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmSettings frmSettings = new frmSettings(this._sessionLengthInMin,this._breakLengthinMin,this._longbreakLengthinMin,this._numOfSessionsForLongBreak,this._defaultExtraAddTime,this._reward1MinBreakForEach);
+            frmSettings frmSettings = new frmSettings(AppSettings._sessionLength, AppSettings._breakLength, AppSettings._longBreakLength, AppSettings._numOfSessionsForLongBreak, AppSettings._defaultAddingTime, AppSettings._rewardMinEach);
 
             frmSettings.onSettingsChanged += SetNewSettings;
 

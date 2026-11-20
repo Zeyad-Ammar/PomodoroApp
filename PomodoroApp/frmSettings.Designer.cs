@@ -55,10 +55,9 @@
             // 
             this.lbFocusSessionTime.AutoSize = true;
             this.lbFocusSessionTime.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFocusSessionTime.Location = new System.Drawing.Point(244, 30);
-            this.lbFocusSessionTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbFocusSessionTime.Location = new System.Drawing.Point(325, 37);
             this.lbFocusSessionTime.Name = "lbFocusSessionTime";
-            this.lbFocusSessionTime.Size = new System.Drawing.Size(185, 31);
+            this.lbFocusSessionTime.Size = new System.Drawing.Size(222, 37);
             this.lbFocusSessionTime.TabIndex = 0;
             this.lbFocusSessionTime.Text = "Focus Session:";
             // 
@@ -66,18 +65,17 @@
             // 
             this.lbBreakTime.AutoSize = true;
             this.lbBreakTime.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbBreakTime.Location = new System.Drawing.Point(263, 93);
-            this.lbBreakTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbBreakTime.Location = new System.Drawing.Point(351, 114);
             this.lbBreakTime.Name = "lbBreakTime";
-            this.lbBreakTime.Size = new System.Drawing.Size(166, 31);
+            this.lbBreakTime.Size = new System.Drawing.Size(199, 37);
             this.lbBreakTime.TabIndex = 1;
             this.lbBreakTime.Text = "Short Break:";
             // 
             // nudSessionLength
             // 
             this.nudSessionLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudSessionLength.Location = new System.Drawing.Point(459, 27);
-            this.nudSessionLength.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudSessionLength.Location = new System.Drawing.Point(612, 33);
+            this.nudSessionLength.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudSessionLength.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -89,7 +87,7 @@
             0,
             0});
             this.nudSessionLength.Name = "nudSessionLength";
-            this.nudSessionLength.Size = new System.Drawing.Size(153, 37);
+            this.nudSessionLength.Size = new System.Drawing.Size(204, 45);
             this.nudSessionLength.TabIndex = 2;
             this.nudSessionLength.Value = new decimal(new int[] {
             1,
@@ -101,8 +99,8 @@
             // nudBreakLength
             // 
             this.nudBreakLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudBreakLength.Location = new System.Drawing.Point(459, 90);
-            this.nudBreakLength.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudBreakLength.Location = new System.Drawing.Point(612, 111);
+            this.nudBreakLength.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudBreakLength.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -114,7 +112,7 @@
             0,
             0});
             this.nudBreakLength.Name = "nudBreakLength";
-            this.nudBreakLength.Size = new System.Drawing.Size(153, 37);
+            this.nudBreakLength.Size = new System.Drawing.Size(204, 45);
             this.nudBreakLength.TabIndex = 3;
             this.nudBreakLength.Value = new decimal(new int[] {
             1,
@@ -126,13 +124,14 @@
             // btnOk
             // 
             this.btnOk.BackColor = System.Drawing.Color.LimeGreen;
+            this.btnOk.FlatAppearance.BorderSize = 0;
             this.btnOk.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lime;
             this.btnOk.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOk.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOk.Location = new System.Drawing.Point(161, 401);
-            this.btnOk.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOk.Location = new System.Drawing.Point(215, 494);
+            this.btnOk.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnOk.Name = "btnOk";
-            this.btnOk.Size = new System.Drawing.Size(141, 52);
+            this.btnOk.Size = new System.Drawing.Size(188, 64);
             this.btnOk.TabIndex = 4;
             this.btnOk.Text = "OK";
             this.btnOk.UseVisualStyleBackColor = false;
@@ -141,13 +140,14 @@
             // btnCancel
             // 
             this.btnCancel.BackColor = System.Drawing.Color.Crimson;
+            this.btnCancel.FlatAppearance.BorderSize = 0;
             this.btnCancel.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.Location = new System.Drawing.Point(344, 401);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Location = new System.Drawing.Point(459, 494);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(141, 52);
+            this.btnCancel.Size = new System.Drawing.Size(188, 64);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = false;
@@ -156,8 +156,8 @@
             // nudLongBreakLength
             // 
             this.nudLongBreakLength.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudLongBreakLength.Location = new System.Drawing.Point(459, 154);
-            this.nudLongBreakLength.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudLongBreakLength.Location = new System.Drawing.Point(612, 190);
+            this.nudLongBreakLength.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudLongBreakLength.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -169,7 +169,7 @@
             0,
             0});
             this.nudLongBreakLength.Name = "nudLongBreakLength";
-            this.nudLongBreakLength.Size = new System.Drawing.Size(153, 37);
+            this.nudLongBreakLength.Size = new System.Drawing.Size(204, 45);
             this.nudLongBreakLength.TabIndex = 7;
             this.nudLongBreakLength.Value = new decimal(new int[] {
             1,
@@ -182,18 +182,17 @@
             // 
             this.lbLongBreak.AutoSize = true;
             this.lbLongBreak.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbLongBreak.Location = new System.Drawing.Point(268, 157);
-            this.lbLongBreak.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbLongBreak.Location = new System.Drawing.Point(357, 193);
             this.lbLongBreak.Name = "lbLongBreak";
-            this.lbLongBreak.Size = new System.Drawing.Size(161, 31);
+            this.lbLongBreak.Size = new System.Drawing.Size(194, 37);
             this.lbLongBreak.TabIndex = 6;
             this.lbLongBreak.Text = "Long Break:";
             // 
             // nudNumberOfSessionsForLongBreak
             // 
             this.nudNumberOfSessionsForLongBreak.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudNumberOfSessionsForLongBreak.Location = new System.Drawing.Point(459, 217);
-            this.nudNumberOfSessionsForLongBreak.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudNumberOfSessionsForLongBreak.Location = new System.Drawing.Point(612, 267);
+            this.nudNumberOfSessionsForLongBreak.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudNumberOfSessionsForLongBreak.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -205,7 +204,7 @@
             0,
             0});
             this.nudNumberOfSessionsForLongBreak.Name = "nudNumberOfSessionsForLongBreak";
-            this.nudNumberOfSessionsForLongBreak.Size = new System.Drawing.Size(153, 37);
+            this.nudNumberOfSessionsForLongBreak.Size = new System.Drawing.Size(204, 45);
             this.nudNumberOfSessionsForLongBreak.TabIndex = 9;
             this.nudNumberOfSessionsForLongBreak.Value = new decimal(new int[] {
             1,
@@ -218,18 +217,17 @@
             // 
             this.lbNumOfSessionsForLongBreak.AutoSize = true;
             this.lbNumOfSessionsForLongBreak.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNumOfSessionsForLongBreak.Location = new System.Drawing.Point(13, 220);
-            this.lbNumOfSessionsForLongBreak.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbNumOfSessionsForLongBreak.Location = new System.Drawing.Point(17, 271);
             this.lbNumOfSessionsForLongBreak.Name = "lbNumOfSessionsForLongBreak";
-            this.lbNumOfSessionsForLongBreak.Size = new System.Drawing.Size(416, 31);
+            this.lbNumOfSessionsForLongBreak.Size = new System.Drawing.Size(499, 37);
             this.lbNumOfSessionsForLongBreak.TabIndex = 8;
             this.lbNumOfSessionsForLongBreak.Text = "Num Of Sessions For Long Break:";
             // 
             // nudDefaultExtraTime
             // 
             this.nudDefaultExtraTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudDefaultExtraTime.Location = new System.Drawing.Point(459, 280);
-            this.nudDefaultExtraTime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudDefaultExtraTime.Location = new System.Drawing.Point(612, 345);
+            this.nudDefaultExtraTime.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudDefaultExtraTime.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -241,7 +239,7 @@
             0,
             0});
             this.nudDefaultExtraTime.Name = "nudDefaultExtraTime";
-            this.nudDefaultExtraTime.Size = new System.Drawing.Size(153, 37);
+            this.nudDefaultExtraTime.Size = new System.Drawing.Size(204, 45);
             this.nudDefaultExtraTime.TabIndex = 11;
             this.nudDefaultExtraTime.Value = new decimal(new int[] {
             1,
@@ -254,18 +252,17 @@
             // 
             this.lbDefaultAddTime.AutoSize = true;
             this.lbDefaultAddTime.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDefaultAddTime.Location = new System.Drawing.Point(191, 283);
-            this.lbDefaultAddTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbDefaultAddTime.Location = new System.Drawing.Point(255, 348);
             this.lbDefaultAddTime.Name = "lbDefaultAddTime";
-            this.lbDefaultAddTime.Size = new System.Drawing.Size(238, 31);
+            this.lbDefaultAddTime.Size = new System.Drawing.Size(285, 37);
             this.lbDefaultAddTime.TabIndex = 10;
             this.lbDefaultAddTime.Text = "Default Extra Add:";
             // 
             // nudRewardMinuteEach
             // 
             this.nudRewardMinuteEach.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nudRewardMinuteEach.Location = new System.Drawing.Point(459, 344);
-            this.nudRewardMinuteEach.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nudRewardMinuteEach.Location = new System.Drawing.Point(612, 423);
+            this.nudRewardMinuteEach.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nudRewardMinuteEach.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -277,7 +274,7 @@
             0,
             0});
             this.nudRewardMinuteEach.Name = "nudRewardMinuteEach";
-            this.nudRewardMinuteEach.Size = new System.Drawing.Size(153, 37);
+            this.nudRewardMinuteEach.Size = new System.Drawing.Size(204, 45);
             this.nudRewardMinuteEach.TabIndex = 13;
             this.nudRewardMinuteEach.Value = new decimal(new int[] {
             1,
@@ -290,18 +287,17 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(63, 347);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(84, 427);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(366, 31);
+            this.label1.Size = new System.Drawing.Size(441, 37);
             this.label1.TabIndex = 12;
             this.label1.Text = "Reward 1 Minute Each Extra:";
             // 
             // frmSettings
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(656, 469);
+            this.ClientSize = new System.Drawing.Size(875, 577);
             this.Controls.Add(this.nudRewardMinuteEach);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.nudDefaultExtraTime);
@@ -318,7 +314,7 @@
             this.Controls.Add(this.lbFocusSessionTime);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmSettings";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Settings";
