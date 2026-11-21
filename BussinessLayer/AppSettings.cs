@@ -88,7 +88,7 @@ namespace PomodoroApp
         private static int RewardBreakMinutes(int totalAddedTime)
         {
             return totalAddedTime / _rewardMinEach
-                + (totalAddedTime % _rewardMinEach) != 0 ? 1 : 0;
+                + (totalAddedTime % _rewardMinEach != 0 ? 1 : 0);
         }
         public static int TargetBreakTime(int endedSessions,int totalAddedTime)
         {

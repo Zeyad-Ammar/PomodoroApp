@@ -202,26 +202,15 @@ namespace PomodoroApp
 
             int timeInMin = _timeInSec / 60;
 
-            if (_isFocusSession && timeInMin == (AppSettings._sessionLength + _addedTimeInMins))
+            if (_isFocusSession && timeInMin == AppSettings.TargetFocusTime(_addedTimeInMins))
             {
 
                 EndFocusSession();
 
             }
-            else if(!_isFocusSession)
+            else if (!_isFocusSession && timeInMin == AppSettings.TargetBreakTime(_sessionNumber - 1, _addedTimeInMins))
             {
-
-                int rewardBreakTime = _addedTimeInMins / AppSettings._rewardMinEach + (_addedTimeInMins % AppSettings._rewardMinEach !=0? 1:0);
-
-                if (AppSettings.IsLongBreak(_sessionNumber-1) && timeInMin == (AppSettings._longBreakLength + rewardBreakTime))
-                {
                     EndBreak();
-                }
-                else if(!AppSettings.IsLongBreak(_sessionNumber-1) && timeInMin == (AppSettings._breakLength +rewardBreakTime))
-                {
-                    EndBreak();
-                }
-
             }
 
 

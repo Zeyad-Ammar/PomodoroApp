@@ -106,7 +106,7 @@
             // 
             this.nudExtraAddTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nudExtraAddTime.Location = new System.Drawing.Point(451, 85);
-            this.nudExtraAddTime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nudExtraAddTime.Margin = new System.Windows.Forms.Padding(4);
             this.nudExtraAddTime.Minimum = new decimal(new int[] {
             1,
             0,
@@ -116,7 +116,7 @@
             this.nudExtraAddTime.Size = new System.Drawing.Size(107, 57);
             this.nudExtraAddTime.TabIndex = 6;
             this.nudExtraAddTime.Value = new decimal(new int[] {
-            1,
+            5,
             0,
             0,
             0});
