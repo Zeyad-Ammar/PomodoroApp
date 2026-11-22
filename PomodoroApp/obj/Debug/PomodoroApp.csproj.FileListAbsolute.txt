@@ -39,3 +39,5 @@ D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\System.Security.AccessControl.xm
 D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\System.Security.Principal.Windows.xml
 D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.frmExtraTime.resources
 D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\Sounds\alarm1.wav
+D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\DataLayer.dll
+D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\DataLayer.pdb
