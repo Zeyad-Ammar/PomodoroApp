@@ -66,13 +66,13 @@
             this.editToolStripMenuItem,
             this.deleteToolStripMenuItem});
             this.cmsMessages.Name = "contextMenuStrip1";
-            this.cmsMessages.Size = new System.Drawing.Size(215, 108);
+            this.cmsMessages.Size = new System.Drawing.Size(167, 80);
             // 
             // editToolStripMenuItem
             // 
             this.editToolStripMenuItem.Image = global::PomodoroApp.Properties.Resources.note;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(214, 38);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(166, 38);
             this.editToolStripMenuItem.Text = "Edit";
             this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
@@ -80,7 +80,7 @@
             // 
             this.deleteToolStripMenuItem.Image = global::PomodoroApp.Properties.Resources.remove;
             this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(214, 38);
+            this.deleteToolStripMenuItem.Size = new System.Drawing.Size(166, 38);
             this.deleteToolStripMenuItem.Text = "Delete";
             this.deleteToolStripMenuItem.Click += new System.EventHandler(this.deleteToolStripMenuItem_Click);
             // 

@@ -121,7 +121,7 @@ namespace DataLayer
 
         public static string GetRandomMessage()
         {
-            string message;
+            string message="";
 
             using (SqlConnection connection = new SqlConnection(DatabaseAccess.ConnectionString))
             {
@@ -138,8 +138,11 @@ namespace DataLayer
                     {
                         connection.Open();
                          var randomMessage= command.ExecuteScalar();
-                         
-                        message=randomMessage.ToString();
+
+                        if (randomMessage != null)
+                        {
+                            message = randomMessage.ToString();
+                        }
 
                     }
                     catch (Exception ex)

@@ -36,12 +36,14 @@ namespace PomodoroApp
              _soundsPath = Path.Combine( AppDomain.CurrentDomain.BaseDirectory,"Sounds");
         }
 
+        
         private void mainScreen_Load(object sender, EventArgs e)
         {
 
             btnPause.Enabled = false;
 
             AppSettings.Load();
+            lbMessage.Text = EncouragementMessage.GetRandomMessage();
 
             UpdateTargetTimeLabel();
 
@@ -169,6 +171,7 @@ namespace PomodoroApp
             UpdateTargetTimeLabel();
             btnStart.Text = "Start Focus";
             settingsToolStripMenuItem.Enabled = true;
+            lbMessage.Text =  EncouragementMessage.GetRandomMessage();
 
         }
 

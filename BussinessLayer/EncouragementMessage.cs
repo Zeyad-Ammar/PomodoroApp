@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 using DataLayer;
@@ -51,10 +52,24 @@ namespace BussinessLayer
         {
             return EncouragementMessages.DeleteMessage(ID);
         }
+
+        private static bool IsRightToLeft(string text)
+        {
+            foreach (char c in text)
+            {
+                if (char.IsLetter(c))
+                {
+                    return c >= '\u0590' && c <= '\u08FF';
+                }
+            }
+
+            return false;
+        }
+       
         
         public static string GetRandomMessage()
         {
-            return EncouragementMessages.GetRandomMessage();
+            return  EncouragementMessages.GetRandomMessage();
         }
         public static bool EditMessage(int ID,string EditedMessage)
         {
