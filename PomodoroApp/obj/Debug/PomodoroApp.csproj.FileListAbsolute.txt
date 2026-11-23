@@ -41,3 +41,5 @@ D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.frmExtraTime.resourc
 D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\Sounds\alarm1.wav
 D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\DataLayer.dll
 D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\DataLayer.pdb
+D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.frmMessages.resources
+D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.frmAddEditMessage.resources

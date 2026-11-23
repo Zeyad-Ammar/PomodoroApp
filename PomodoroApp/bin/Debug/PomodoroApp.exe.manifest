@@ -163,14 +163,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PomodoroApp.exe" size="1150888">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PomodoroApp.exe" size="2049960">
       <assemblyIdentity name="PomodoroApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Ql91IJuziwgc+Nu7F/1skeOY87f55Ba3PGLIbCQ0wDE=</dsig:DigestValue>
+        <dsig:DigestValue>HytHRgE70LeQZL0oXrtcdCk+xow+TozniI2s0+/gGoU=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

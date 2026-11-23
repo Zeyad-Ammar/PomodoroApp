@@ -248,5 +248,12 @@ namespace PomodoroApp
 
             frmSettings.ShowDialog();
         }
+
+        private void messagesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMessages frmMessages = new frmMessages();
+            frmMessages.Show();
+
+        }
     }
 }

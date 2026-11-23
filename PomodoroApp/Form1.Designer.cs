@@ -37,7 +37,7 @@
             this.lbSessionsCounter = new System.Windows.Forms.Label();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
             this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.niAddTime = new System.Windows.Forms.NotifyIcon(this.components);
+            this.messagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbTargetTime = new System.Windows.Forms.Label();
             this.MainMenu.SuspendLayout();
             this.SuspendLayout();
@@ -105,15 +105,17 @@
             // MainMenu
             // 
             this.MainMenu.BackColor = System.Drawing.Color.Transparent;
-            this.MainMenu.Dock = System.Windows.Forms.DockStyle.None;
+            this.MainMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.MainMenu.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.settingsToolStripMenuItem});
-            this.MainMenu.Location = new System.Drawing.Point(9, 9);
+            this.settingsToolStripMenuItem,
+            this.messagesToolStripMenuItem});
+            this.MainMenu.Location = new System.Drawing.Point(0, 0);
+            this.MainMenu.Margin = new System.Windows.Forms.Padding(5);
             this.MainMenu.Name = "MainMenu";
-            this.MainMenu.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.MainMenu.Size = new System.Drawing.Size(170, 45);
+            this.MainMenu.Padding = new System.Windows.Forms.Padding(5);
+            this.MainMenu.Size = new System.Drawing.Size(205, 846);
             this.MainMenu.TabIndex = 5;
             this.MainMenu.Text = "Menu";
             // 
@@ -121,15 +123,20 @@
             // 
             this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
             this.settingsToolStripMenuItem.Image = global::PomodoroApp.Properties.Resources.cogwheel;
+            this.settingsToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5);
             this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(163, 41);
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(174, 41);
             this.settingsToolStripMenuItem.Text = "Settings";
             this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
             // 
-            // niAddTime
+            // messagesToolStripMenuItem
             // 
-            this.niAddTime.Text = "Are U want To add time";
-            this.niAddTime.Visible = true;
+            this.messagesToolStripMenuItem.Image = global::PomodoroApp.Properties.Resources.encouragement;
+            this.messagesToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5);
+            this.messagesToolStripMenuItem.Name = "messagesToolStripMenuItem";
+            this.messagesToolStripMenuItem.Size = new System.Drawing.Size(174, 41);
+            this.messagesToolStripMenuItem.Text = "Messages";
+            this.messagesToolStripMenuItem.Click += new System.EventHandler(this.messagesToolStripMenuItem_Click);
             // 
             // lbTargetTime
             // 
@@ -151,7 +158,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1960, 846);
+            this.ClientSize = new System.Drawing.Size(1924, 846);
             this.Controls.Add(this.lbTargetTime);
             this.Controls.Add(this.MainMenu);
             this.Controls.Add(this.lbSessionsCounter);
@@ -182,8 +189,8 @@
         private System.Windows.Forms.Label lbSessionsCounter;
         private System.Windows.Forms.MenuStrip MainMenu;
         private System.Windows.Forms.ToolStripMenuItem settingsToolStripMenuItem;
-        private System.Windows.Forms.NotifyIcon niAddTime;
         private System.Windows.Forms.Label lbTargetTime;
+        private System.Windows.Forms.ToolStripMenuItem messagesToolStripMenuItem;
     }
 }
 
