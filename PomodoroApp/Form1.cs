@@ -58,7 +58,7 @@ namespace PomodoroApp
             _timeInSec = 0;
             timer1.Start();
             btnStart.Enabled = false;
-            settingsToolStripMenuItem.Enabled = false;
+            MainMenu.Enabled = false;
             btnPause.Enabled = true;
            
 
@@ -109,7 +109,7 @@ namespace PomodoroApp
             frmExtraTime.Show();
         }
 
-        
+ 
         private void ContinueFocusSession()
         {
             _isFocusSession = true;
@@ -121,7 +121,8 @@ namespace PomodoroApp
             UpdateTargetTimeLabel();
             lbSessionsCounter.Text = " Session " + _sessionNumber.ToString();
             btnStart.Text = "Start Focus";
-            settingsToolStripMenuItem.Enabled = false;
+            MainMenu.Enabled=false;
+            
 
         }
         private void UpdateTargetTimeLabel()
@@ -148,7 +149,8 @@ namespace PomodoroApp
             btnPause.Enabled = false;
             btnStart.Enabled = true;
             _sessionNumber++;
-            settingsToolStripMenuItem.Enabled = true;
+            MainMenu.Enabled = true;
+
 
             lbSessionsCounter.Text = (AppSettings.IsLongBreak(_sessionNumber-1)? "Long":"Short") +" Break";
             UpdateTargetTimeLabel();
@@ -170,7 +172,8 @@ namespace PomodoroApp
             lbSessionsCounter.Text = " Session " + _sessionNumber.ToString();
             UpdateTargetTimeLabel();
             btnStart.Text = "Start Focus";
-            settingsToolStripMenuItem.Enabled = true;
+            MainMenu.Enabled = true;
+
             lbMessage.Text =  EncouragementMessage.GetRandomMessage();
 
         }

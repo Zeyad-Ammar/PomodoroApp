@@ -52,11 +52,11 @@
             // 
             this.lbTimer.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbTimer.AutoSize = true;
-            this.lbTimer.Font = new System.Drawing.Font("MV Boli", 120F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTimer.Font = new System.Drawing.Font("MV Boli", 130.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTimer.ForeColor = System.Drawing.Color.Black;
-            this.lbTimer.Location = new System.Drawing.Point(628, 285);
+            this.lbTimer.Location = new System.Drawing.Point(593, 285);
             this.lbTimer.Name = "lbTimer";
-            this.lbTimer.Size = new System.Drawing.Size(739, 263);
+            this.lbTimer.Size = new System.Drawing.Size(801, 284);
             this.lbTimer.TabIndex = 0;
             this.lbTimer.Text = "00:00";
             this.lbTimer.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -93,12 +93,11 @@
             // lbSessionsCounter
             // 
             this.lbSessionsCounter.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbSessionsCounter.AutoSize = true;
             this.lbSessionsCounter.Font = new System.Drawing.Font("Times New Roman", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSessionsCounter.ForeColor = System.Drawing.Color.Black;
-            this.lbSessionsCounter.Location = new System.Drawing.Point(868, 10);
+            this.lbSessionsCounter.Location = new System.Drawing.Point(624, 9);
             this.lbSessionsCounter.Name = "lbSessionsCounter";
-            this.lbSessionsCounter.Size = new System.Drawing.Size(259, 68);
+            this.lbSessionsCounter.Size = new System.Drawing.Size(739, 68);
             this.lbSessionsCounter.TabIndex = 3;
             this.lbSessionsCounter.Text = "Session 1";
             this.lbSessionsCounter.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -142,14 +141,13 @@
             // lbTargetTime
             // 
             this.lbTargetTime.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbTargetTime.AutoSize = true;
             this.lbTargetTime.BackColor = System.Drawing.Color.Transparent;
             this.lbTargetTime.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.lbTargetTime.ForeColor = System.Drawing.Color.Green;
-            this.lbTargetTime.Location = new System.Drawing.Point(844, 563);
+            this.lbTargetTime.Location = new System.Drawing.Point(628, 563);
             this.lbTargetTime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTargetTime.Name = "lbTargetTime";
-            this.lbTargetTime.Size = new System.Drawing.Size(306, 45);
+            this.lbTargetTime.Size = new System.Drawing.Size(739, 45);
             this.lbTargetTime.TabIndex = 6;
             this.lbTargetTime.Text = "Target Time (60)";
             this.lbTargetTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
