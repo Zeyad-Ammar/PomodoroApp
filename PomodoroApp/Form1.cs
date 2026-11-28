@@ -26,6 +26,8 @@ namespace PomodoroApp
         private int _sessionNumber = 1;
         private int _timeInSec = 0;
         private int _addedTimeInMins = 0;
+
+        
         private AudioFileReader alarmSound;
         private WasapiOut outputDevice;
         private frmExtraTime frmExtraTime;
@@ -42,7 +44,9 @@ namespace PomodoroApp
 
             btnPause.Enabled = false;
 
-            AppSettings.Load();
+            AppSettings.LoadTimeSettings();
+            AppSettings.LoadSpeakersSettings();
+
             lbMessage.Text = EncouragementMessage.GetRandomMessage();
 
             UpdateTargetTimeLabel();
@@ -71,7 +75,7 @@ namespace PomodoroApp
         }
         private void PlayAlarm()
         {
-            speakerDevice = Speakers.GetIntegratedAudioDevice();
+            speakerDevice = Speakers.GetAudioDevice(AppSettings._audioDeviceName);
             alarmSound = new AudioFileReader(Path.Combine(_soundsPath, "alarm1.wav"));
             outputDevice = new WasapiOut(speakerDevice, AudioClientShareMode.Shared, true, 100);
 
@@ -178,11 +182,11 @@ namespace PomodoroApp
 
         }
 
-        private void SetNewSettings(object obj,frmSettings.settingsArg args)
+        private void SetNewTimeSettings(object obj,frmSettings.settingsArg args)
         {
 
 
-            AppSettings.Save(
+            AppSettings.SaveTimeSettings(
                 args.sessionLength,
                 args.breakLength,
                 args.longBreakLength,
@@ -191,6 +195,7 @@ namespace PomodoroApp
                 args.rewardMinEach
                 );
 
+            
             UpdateTargetTimeLabel();
 
 
@@ -250,7 +255,7 @@ namespace PomodoroApp
         {
             frmSettings frmSettings = new frmSettings(AppSettings._sessionLength, AppSettings._breakLength, AppSettings._longBreakLength, AppSettings._numOfSessionsForLongBreak, AppSettings._defaultAddingTime, AppSettings._rewardMinEach);
 
-            frmSettings.onSettingsChanged += SetNewSettings;
+            frmSettings.onSettingsChanged += SetNewTimeSettings;
 
             frmSettings.ShowDialog();
         }
@@ -260,6 +265,19 @@ namespace PomodoroApp
             frmMessages frmMessages = new frmMessages();
             frmMessages.Show();
 
+        }
+
+        private void SetNewSpeakersSettings(string DeviceName)
+        {
+            AppSettings.SaveSpeakersSettings(DeviceName);
+
+        }
+
+        private void speakersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSpeakersConfig frmSpeakersConfig = new frmSpeakersConfig(AppSettings._audioDeviceName);
+            frmSpeakersConfig.onSelectedDevice += SetNewSpeakersSettings;
+            frmSpeakersConfig.Show();
         }
     }
 }

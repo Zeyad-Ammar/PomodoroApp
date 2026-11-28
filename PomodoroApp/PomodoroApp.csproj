@@ -23,14 +23,16 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>14</ApplicationRevision>
+    <PublisherName>Zeyad Ammar</PublisherName>
+    <ApplicationRevision>17</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -145,6 +147,12 @@
     <Compile Include="frmMessages.Designer.cs">
       <DependentUpon>frmMessages.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSpeakersConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSpeakersConfig.Designer.cs">
+      <DependentUpon>frmSpeakersConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Speakers.cs" />
@@ -162,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMessages.resx">
       <DependentUpon>frmMessages.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSpeakersConfig.resx">
+      <DependentUpon>frmSpeakersConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -217,6 +228,13 @@
     <None Include="Resources\encouragement.png" />
     <None Include="Resources\note.png" />
     <None Include="Resources\remove.png" />
+    <Content Include="PomodoroApp.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="PomodoroApp_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\loud-speaker.png" />
     <Content Include="Sounds\alarm1.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

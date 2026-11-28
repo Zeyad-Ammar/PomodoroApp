@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
-  <asmv1:assemblyIdentity name="PomodoroApp.exe" version="1.0.0.14" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
+  <asmv1:assemblyIdentity name="PomodoroApp.exe" version="1.0.0.17" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
   <description asmv2:iconFile="Gemini_Generated_Image_fhiritfhiritfhir.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <application />
   <entryPoint>
-    <assemblyIdentity name="PomodoroApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <assemblyIdentity name="PomodoroApp" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
     <commandLine file="PomodoroApp.exe" parameters="" />
   </entryPoint>
   <trustInfo>
@@ -43,26 +43,26 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BussinessLayer.dll" size="9216">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="BussinessLayer.dll" size="9728">
       <assemblyIdentity name="BussinessLayer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>fvlnr5rkMkUh4vP50+rTZ9TY7KmAxHrKu2fLzO+3NGk=</dsig:DigestValue>
+        <dsig:DigestValue>xY0JjYIXYxJk261v4IQN05FQlEwiJVEgF6Nc7d1r87E=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataLayer.dll" size="8192">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DataLayer.dll" size="10752">
       <assemblyIdentity name="DataLayer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Rj1Xrsyuvfqmc8Ia1aF8/pYLJtueKMJ7gXCJuLG/qBw=</dsig:DigestValue>
+        <dsig:DigestValue>U3jGs0TZE62n6phyzUf22wz3a/0P3lIPSvxOhsY4fCQ=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -163,14 +163,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PomodoroApp.exe" size="2049960">
-      <assemblyIdentity name="PomodoroApp" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="PomodoroApp.exe" size="2363816">
+      <assemblyIdentity name="PomodoroApp" version="1.0.0.0" language="neutral" processorArchitecture="amd64" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>S2Ho32Gam7IAEjSD56ms0FsfHeOP2t2pRX+1QyYoFZA=</dsig:DigestValue>
+        <dsig:DigestValue>fs9brgdyNpUix8sTCcyn0BrGBzrVgBabw7f+WuRuOVc=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -207,13 +207,31 @@
       <dsig:DigestValue>xo9026M7A84v3uvAatW8HGyVL19fbSXTNClhQTcwMpw=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PomodoroApp.exe.config" size="388">
+  <file name="PomodoroApp.exe.config" size="674">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>NxI9gh2pcweroMSxo9EhvFEsIgb3ErmsETZtqvToB6I=</dsig:DigestValue>
+      <dsig:DigestValue>YBwXOJkNlHEUVevYMC4ZzbQ+1aphbviGTyPckiCTUIQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PomodoroApp.mdf" size="8388608" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>HFCABziSruGr7U7nYUpzIfyemHiGmwVQuUHRojR7y5k=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="PomodoroApp_log.ldf" size="8388608" writeableType="applicationData">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
+      <dsig:DigestValue>N8XOPesxCcMwV8Om40uSFvGiAu2meZwwYaaXX5FtnHE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Sounds\alarm1.wav" size="1341006">

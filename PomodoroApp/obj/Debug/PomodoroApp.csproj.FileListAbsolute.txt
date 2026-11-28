@@ -43,3 +43,6 @@ D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\DataLayer.dll
 D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\DataLayer.pdb
 D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.frmMessages.resources
 D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.frmAddEditMessage.resources
+D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\PomodoroApp.mdf
+D:\VSProjects\PomodoroApp\PomodoroApp\bin\Debug\PomodoroApp_log.ldf
+D:\VSProjects\PomodoroApp\PomodoroApp\obj\Debug\PomodoroApp.frmSpeakersConfig.resources

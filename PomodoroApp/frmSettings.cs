@@ -39,7 +39,7 @@ namespace PomodoroApp
             public int defaultExtraAdd { get; set; }
             public int rewardMinEach { get; set; }
 
-
+            public string audioDeviceName { get; set; }
 
             public settingsArg(int sessionLength, int breakLength,int longBreakLength,int numOfSessionsForLongBreak,int defaultExtraAdd,int rewardMinEach)
             {

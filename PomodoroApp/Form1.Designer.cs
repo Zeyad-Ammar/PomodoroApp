@@ -36,10 +36,11 @@
             this.btnPause = new System.Windows.Forms.Button();
             this.lbSessionsCounter = new System.Windows.Forms.Label();
             this.MainMenu = new System.Windows.Forms.MenuStrip();
-            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.messagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lbTargetTime = new System.Windows.Forms.Label();
             this.lbMessage = new System.Windows.Forms.Label();
+            this.settingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.messagesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.speakersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -107,36 +108,18 @@
             this.MainMenu.BackColor = System.Drawing.Color.Transparent;
             this.MainMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.MainMenu.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MainMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.MainMenu.ImageScalingSize = new System.Drawing.Size(40, 40);
             this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.settingsToolStripMenuItem,
-            this.messagesToolStripMenuItem});
+            this.messagesToolStripMenuItem,
+            this.speakersToolStripMenuItem});
             this.MainMenu.Location = new System.Drawing.Point(0, 0);
             this.MainMenu.Margin = new System.Windows.Forms.Padding(5);
             this.MainMenu.Name = "MainMenu";
             this.MainMenu.Padding = new System.Windows.Forms.Padding(5);
-            this.MainMenu.Size = new System.Drawing.Size(205, 846);
+            this.MainMenu.Size = new System.Drawing.Size(225, 846);
             this.MainMenu.TabIndex = 5;
             this.MainMenu.Text = "Menu";
-            // 
-            // settingsToolStripMenuItem
-            // 
-            this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
-            this.settingsToolStripMenuItem.Image = global::PomodoroApp.Properties.Resources.cogwheel;
-            this.settingsToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5);
-            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
-            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(174, 41);
-            this.settingsToolStripMenuItem.Text = "Settings";
-            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
-            // 
-            // messagesToolStripMenuItem
-            // 
-            this.messagesToolStripMenuItem.Image = global::PomodoroApp.Properties.Resources.encouragement;
-            this.messagesToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5);
-            this.messagesToolStripMenuItem.Name = "messagesToolStripMenuItem";
-            this.messagesToolStripMenuItem.Size = new System.Drawing.Size(174, 41);
-            this.messagesToolStripMenuItem.Text = "Messages";
-            this.messagesToolStripMenuItem.Click += new System.EventHandler(this.messagesToolStripMenuItem_Click);
             // 
             // lbTargetTime
             // 
@@ -165,6 +148,36 @@
             this.lbMessage.TabIndex = 7;
             this.lbMessage.Text = "Message";
             this.lbMessage.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // settingsToolStripMenuItem
+            // 
+            this.settingsToolStripMenuItem.BackColor = System.Drawing.Color.Transparent;
+            this.settingsToolStripMenuItem.Image = global::PomodoroApp.Properties.Resources.cogwheel;
+            this.settingsToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.settingsToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5);
+            this.settingsToolStripMenuItem.Name = "settingsToolStripMenuItem";
+            this.settingsToolStripMenuItem.Size = new System.Drawing.Size(194, 44);
+            this.settingsToolStripMenuItem.Text = "Settings";
+            this.settingsToolStripMenuItem.Click += new System.EventHandler(this.settingsToolStripMenuItem_Click);
+            // 
+            // messagesToolStripMenuItem
+            // 
+            this.messagesToolStripMenuItem.Image = global::PomodoroApp.Properties.Resources.encouragement;
+            this.messagesToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.messagesToolStripMenuItem.Margin = new System.Windows.Forms.Padding(5);
+            this.messagesToolStripMenuItem.Name = "messagesToolStripMenuItem";
+            this.messagesToolStripMenuItem.Size = new System.Drawing.Size(194, 44);
+            this.messagesToolStripMenuItem.Text = "Messages";
+            this.messagesToolStripMenuItem.Click += new System.EventHandler(this.messagesToolStripMenuItem_Click);
+            // 
+            // speakersToolStripMenuItem
+            // 
+            this.speakersToolStripMenuItem.Image = global::PomodoroApp.Properties.Resources.loud_speaker;
+            this.speakersToolStripMenuItem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.speakersToolStripMenuItem.Name = "speakersToolStripMenuItem";
+            this.speakersToolStripMenuItem.Size = new System.Drawing.Size(204, 44);
+            this.speakersToolStripMenuItem.Text = "Speakers";
+            this.speakersToolStripMenuItem.Click += new System.EventHandler(this.speakersToolStripMenuItem_Click);
             // 
             // mainScreen
             // 
@@ -206,6 +219,7 @@
         private System.Windows.Forms.Label lbTargetTime;
         private System.Windows.Forms.ToolStripMenuItem messagesToolStripMenuItem;
         private System.Windows.Forms.Label lbMessage;
+        private System.Windows.Forms.ToolStripMenuItem speakersToolStripMenuItem;
     }
 }
 

@@ -18,13 +18,14 @@ namespace PomodoroApp
         static public int _numOfSessionsForLongBreak { get; private set; }
         static public int _defaultAddingTime { get; private set; }
 
+        static public string _audioDeviceName;
         static public int _rewardMinEach { get; private set; }
 
 
         static private string _keyPath = @"HKEY_CURRENT_USER\SOFTWARE\PomodoroApp";
         
 
-        public static void Load()
+        public static void LoadTimeSettings()
         {
             try
             {
@@ -34,10 +35,11 @@ namespace PomodoroApp
                  _numOfSessionsForLongBreak= int.Parse(Registry.GetValue(_keyPath, "sessionsNumForLongBreak", null) as string);
                  _defaultAddingTime = int.Parse(Registry.GetValue(_keyPath, "defaultExtraAddTime", null) as string);
                  _rewardMinEach = int.Parse(Registry.GetValue(_keyPath, "rewardMinEach", null) as string);
+                _audioDeviceName = Registry.GetValue(_keyPath, "audioDeviceName", null) as string;
 
 
 
-               
+
             }
             catch 
             {
@@ -47,6 +49,7 @@ namespace PomodoroApp
                 _numOfSessionsForLongBreak =  4;
                 _defaultAddingTime =  5;
                 _rewardMinEach =   3;
+                _audioDeviceName = "";
             } 
 
             
@@ -54,7 +57,7 @@ namespace PomodoroApp
             
         }
 
-        public static void Save(int sessionLength,int breakLength,int longBreakLength,int numOfSessionsForLongBreak, int defaultExtraAddMinutes,  int rewardMinuteEach)
+        public static void SaveTimeSettings(int sessionLength,int breakLength,int longBreakLength,int numOfSessionsForLongBreak, int defaultExtraAddMinutes,  int rewardMinuteEach)
         {
            
             try
@@ -75,7 +78,7 @@ namespace PomodoroApp
                 Registry.SetValue(_keyPath, "defaultExtraAddTime", defaultExtraAddMinutes.ToString(), RegistryValueKind.String);
                 Registry.SetValue(_keyPath, "rewardMinEach", rewardMinuteEach.ToString(), RegistryValueKind.String);
 
-                
+
 
             }
             catch (Exception ex) {
@@ -83,6 +86,44 @@ namespace PomodoroApp
                 throw new AccessViolationException("Can't save the settings because "+ ex.Message );
             
             }
+
+        }
+
+        public static void SaveSpeakersSettings(string audioDeviceName)
+        {
+
+            try
+            {
+
+                _audioDeviceName = audioDeviceName;
+
+                Registry.SetValue(_keyPath, "audioDeviceName", audioDeviceName, RegistryValueKind.String);
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw new AccessViolationException("Can't save the settings because " + ex.Message);
+
+            }
+
+        }
+
+        public static void LoadSpeakersSettings()
+        {
+            try
+            {
+                 _audioDeviceName = Registry.GetValue(_keyPath, "audioDeviceName", null) as string;
+
+            }
+            catch
+            {
+                _audioDeviceName = "";
+            }
+
+
+
 
         }
 

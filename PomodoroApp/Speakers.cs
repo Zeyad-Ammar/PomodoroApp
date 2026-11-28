@@ -21,5 +21,39 @@ namespace PomodoroApp
                 return devices[0];
             }
         }
+
+        public static MMDevice GetAudioDevice(string DeviceName)
+        {
+            using (var enumerator = new MMDeviceEnumerator())
+            {
+                var devices = enumerator.EnumerateAudioEndPoints(
+                    DataFlow.Render,
+                    DeviceState.Active
+                );
+                
+                foreach (var device in devices)
+                {
+                    if (device.FriendlyName == DeviceName)
+                    {
+                        return device;
+                    }
+                }
+
+                
+                return devices[0];
+            }
+        }
+        public static MMDeviceCollection GetAudioDevices()
+        {
+            using (var enumerator = new MMDeviceEnumerator())
+            {
+                var devices = enumerator.EnumerateAudioEndPoints(
+                    DataFlow.Render,
+                    DeviceState.Active
+                );
+
+                return devices;
+            }
+        }
     }
 }
