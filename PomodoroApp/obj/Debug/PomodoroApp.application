@@ -7,14 +7,14 @@
     <framework targetVersion="4.8" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="PomodoroApp.exe.manifest" size="14708">
+    <dependentAssembly dependencyType="install" codebase="PomodoroApp.exe.manifest" size="13848">
       <assemblyIdentity name="PomodoroApp.exe" version="1.0.0.17" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="amd64" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>RuOdy4iR4STOugQvalfT+yZWpAlhfl/avtHD1Y8qC6c=</dsig:DigestValue>
+        <dsig:DigestValue>LoNHf6Q4wuT+vS9UM89MVXcgs8b/rfEDJBM1FNpjDsM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

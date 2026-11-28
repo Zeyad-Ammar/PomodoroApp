@@ -216,24 +216,6 @@
       <dsig:DigestValue>YBwXOJkNlHEUVevYMC4ZzbQ+1aphbviGTyPckiCTUIQ=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="PomodoroApp.mdf" size="8388608" writeableType="applicationData">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>HFCABziSruGr7U7nYUpzIfyemHiGmwVQuUHRojR7y5k=</dsig:DigestValue>
-    </hash>
-  </file>
-  <file name="PomodoroApp_log.ldf" size="8388608" writeableType="applicationData">
-    <hash>
-      <dsig:Transforms>
-        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
-      </dsig:Transforms>
-      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>N8XOPesxCcMwV8Om40uSFvGiAu2meZwwYaaXX5FtnHE=</dsig:DigestValue>
-    </hash>
-  </file>
   <file name="Sounds\alarm1.wav" size="1341006">
     <hash>
       <dsig:Transforms>

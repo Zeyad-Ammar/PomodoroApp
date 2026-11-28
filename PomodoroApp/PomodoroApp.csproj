@@ -228,12 +228,6 @@
     <None Include="Resources\encouragement.png" />
     <None Include="Resources\note.png" />
     <None Include="Resources\remove.png" />
-    <Content Include="PomodoroApp.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="PomodoroApp_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <None Include="Resources\loud-speaker.png" />
     <Content Include="Sounds\alarm1.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
